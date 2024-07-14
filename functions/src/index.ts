@@ -1,5 +1,10 @@
-import {createRecord} from "./records/createRecord";
+import * as admin from "firebase-admin";
+admin.initializeApp();
 
-import {firestoreTriggers} from "./records/incrementIdTrigger";
+import {createRecordHandler} from "./core/records/handlers/createRecordHandler";
 
-export {firestoreTriggers, createRecord};
+import {
+  incrementIDfirestoreTriggers,
+} from "./core/records/handlers/incrementIdTriggerHandler";
+
+export {incrementIDfirestoreTriggers, createRecordHandler};

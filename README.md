@@ -6,12 +6,20 @@ A estrutura do projeto é organizada de acordo com os princípios do DDD, separa
 
 ```
 src/
-├── config/                  # Configurações do projeto
-│   └── configManager.ts
-├── records/                 # Domínio de registros
-│   ├── createRecord.ts
-│   └── incrementIdTrigger.ts
-├── index.ts                 # Entrada principal das funções Firebase
+├── config
+├── core/records
+│   ├── dtos/
+│   │   └── createRecordDTO.ts
+│   ├── models/
+│   │   └── Record.ts
+│   ├── usecases/
+│   │   └── createRecordUseCase.ts
+│   └── handlers/
+│       └── createRecordHandler.ts
+│       └── incrementIdTriggerHandler.ts
+├── index.ts
+└── package.json
+
 ```
 ## Módulos e Responsabilidades
 **config/**: Gerenciamento centralizado de configurações.<br>

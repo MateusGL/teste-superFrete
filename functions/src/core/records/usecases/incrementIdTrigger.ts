@@ -26,15 +26,3 @@ export const incrementIdTrigger = async (
   await snap.ref.update({increment_id: incrementId});
   await incrementIdRef.set({value: incrementId}, {merge: true});
 };
-
-import * as functions from "firebase-functions";
-
-import {ConfigManager} from "../config/configManager";
-
-const configManager = ConfigManager.getInstance();
-
-export const firestoreTriggers = {
-  onRecordCreate: functions.firestore
-    .document(`${configManager.get("firestoreCollection")}/{docId}`)
-    .onCreate(incrementIdTrigger),
-};
